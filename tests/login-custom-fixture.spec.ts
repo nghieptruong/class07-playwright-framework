@@ -1,12 +1,8 @@
-import test, { expect } from "@playwright/test";
-import { HomePage } from "../pages/HomePage";
-import { LoginPage } from "../pages/LoginPage";
+import { test, expect } from '../fixtures/custom-fixtures';
 
 test.describe("Login Functional Test", () => {
-  test("Valid Login Test", async ({ page }) => {
-    let homePage = new HomePage(page);
-    let loginPage = new LoginPage(page);
-
+  test("Valid Login Test", async ({ homePage, loginPage }) => {
+    
     homePage.navigateTo("https://demo1.cybersoft.edu.vn/");
 
     //Step 1: Click Dang Nhap
